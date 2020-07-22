@@ -21,6 +21,7 @@ public class CourseServiceImpl implements CourseService {
 
     /**
      * List of all the courses
+     *
      * @return
      */
     @Override
@@ -30,6 +31,7 @@ public class CourseServiceImpl implements CourseService {
 
     /**
      * get the single instance of the course by id
+     *
      * @param courseId
      * @return
      */
@@ -42,6 +44,7 @@ public class CourseServiceImpl implements CourseService {
     /**
      * add a new course in the course table
      * id is auto generated
+     *
      * @param course
      * @return
      */
@@ -53,6 +56,7 @@ public class CourseServiceImpl implements CourseService {
 
     /**
      * update a single course, have to give the the data with id
+     *
      * @param course
      * @return
      */
@@ -64,12 +68,22 @@ public class CourseServiceImpl implements CourseService {
 
     /**
      * delete the course by the given id
+     *
      * @param courseId
      */
     @Override
     public void deleteCourse(long courseId) {
         Course course = courseDao.getOne(courseId);
         courseDao.delete(course);
+    }
+
+    /**
+     * custom query implementation in the CourseDao file
+     * @return
+     */
+    @Override
+    public List<String> getCourseName() {
+        return courseDao.getCourseName();
     }
 
 }

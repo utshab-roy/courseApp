@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+// Connecting with react (CORS policy solution)
+@CrossOrigin(origins = "http://localhost:3000")
 public class CourseController {
 
     @Autowired
@@ -17,8 +19,9 @@ public class CourseController {
 
     //    @RequestMapping(path = "/home", method = RequestMethod.GET)
     @GetMapping("/home")
-    public String home() {
-        return "hello world";
+    public List<String> home() {
+        // custom query test, see the CourseDao.java file
+        return this.courseService.getCourseName();
     }
 
     // list of courses
