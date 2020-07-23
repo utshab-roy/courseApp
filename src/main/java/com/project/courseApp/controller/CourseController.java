@@ -1,6 +1,6 @@
 package com.project.courseApp.controller;
 
-import com.project.courseApp.entities.Course;
+import com.project.courseApp.model.Course;
 import com.project.courseApp.services.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -20,7 +20,7 @@ public class CourseController {
     //    @RequestMapping(path = "/home", method = RequestMethod.GET)
     @GetMapping("/home")
     public List<String> home() {
-        // custom query test, see the CourseDao.java file
+        // custom query test, see the CourseRepository.java file
         return this.courseService.getCourseName();
     }
 

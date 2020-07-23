@@ -1,6 +1,6 @@
 package com.project.courseApp.services;
 
-import com.project.courseApp.entities.Course;
+import com.project.courseApp.model.Course;
 
 import java.util.List;
 

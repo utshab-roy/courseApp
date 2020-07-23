@@ -1,7 +1,7 @@
 package com.project.courseApp.services;
 
-import com.project.courseApp.dao.CourseDao;
-import com.project.courseApp.entities.Course;
+import com.project.courseApp.repository.CourseRepository;
+import com.project.courseApp.model.Course;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,10 +13,10 @@ import java.util.List;
 public class CourseServiceImpl implements CourseService {
 
     /**
-     * creating the object of the CourseDao
+     * creating the object of the CourseRepository
      */
     @Autowired
-    private CourseDao courseDao;
+    private CourseRepository courseRepository;
 
 
     /**
@@ -26,7 +26,7 @@ public class CourseServiceImpl implements CourseService {
      */
     @Override
     public List<Course> getCourses() {
-        return courseDao.findAll();
+        return courseRepository.findAll();
     }
 
     /**
@@ -37,7 +37,7 @@ public class CourseServiceImpl implements CourseService {
      */
     @Override
     public Course getCourse(long courseId) {
-        return courseDao.findById(courseId).orElse(null);
+        return courseRepository.findById(courseId).orElse(null);
 
     }
 
@@ -50,7 +50,7 @@ public class CourseServiceImpl implements CourseService {
      */
     @Override
     public Course addCourse(Course course) {
-        courseDao.save(course);
+        courseRepository.save(course);
         return course;
     }
 
@@ -62,7 +62,7 @@ public class CourseServiceImpl implements CourseService {
      */
     @Override
     public Course updateCourse(Course course) {
-        courseDao.save(course);
+        courseRepository.save(course);
         return course;
     }
 
@@ -73,17 +73,17 @@ public class CourseServiceImpl implements CourseService {
      */
     @Override
     public void deleteCourse(long courseId) {
-        Course course = courseDao.getOne(courseId);
-        courseDao.delete(course);
+        Course course = courseRepository.getOne(courseId);
+        courseRepository.delete(course);
     }
 
     /**
-     * custom query implementation in the CourseDao file
+     * custom query implementation in the CourseRepository file
      * @return
      */
     @Override
     public List<String> getCourseName() {
-        return courseDao.getCourseName();
+        return courseRepository.getCourseName();
     }
 
 }

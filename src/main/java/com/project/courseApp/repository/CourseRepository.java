@@ -1,12 +1,12 @@
-package com.project.courseApp.dao;
+package com.project.courseApp.repository;
 
-import com.project.courseApp.entities.Course;
+import com.project.courseApp.model.Course;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
-public interface CourseDao extends JpaRepository<Course, Long> {
+public interface CourseRepository extends JpaRepository<Course, Long> {
     @Query("SELECT name FROM Course")
     List<String> getCourseName();
 }

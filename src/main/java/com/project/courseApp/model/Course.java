@@ -1,4 +1,4 @@
-package com.project.courseApp.entities;
+package com.project.courseApp.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,16 +13,6 @@ public class Course {
     private long id;
     private String name;
     private String description;
-
-    public Course() {
-        super();
-    }
-
-    public Course(long id, String name, String description) {
-        this.id = id;
-        this.name = name;
-        this.description = description;
-    }
 
     public long getId() {
         return id;
