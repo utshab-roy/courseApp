@@ -16,5 +16,9 @@ public interface CourseService {
 
     void deleteCourse(long courseId);
 
+    // raw query execute interface
     List<String> getCourseName();
+
+    //
+    List<Course> getByName(String name);
 }

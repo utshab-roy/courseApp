@@ -1,6 +1,7 @@
 package com.project.courseApp.controller;
 
 import com.project.courseApp.model.Course;
+import com.project.courseApp.repository.CourseRepository;
 import com.project.courseApp.services.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,6 +17,13 @@ public class CourseController {
 
     @Autowired
     private CourseService courseService;
+
+    /**
+     * implemented just to check the query value in the console
+     * not recommended way or approach
+     */
+    @Autowired
+    private CourseRepository courseRepository;
 
     //    @RequestMapping(path = "/home", method = RequestMethod.GET)
     @GetMapping("/home")
@@ -34,6 +42,20 @@ public class CourseController {
     @GetMapping("/courses/{courseId}")
     public Course getCourse(@PathVariable String courseId) {
         return this.courseService.getCourse(Long.parseLong(courseId));
+    }
+
+    /**
+     * TODO: how to make it follow the convention, courses/name-of-the-course
+     *
+     * @param courseName
+     * @return just the name entity of the courses
+     */
+    @GetMapping("/name/{courseName}")
+    public List<Course> getByName(@PathVariable String courseName) {
+        // custom query test, see the CourseRepository.java file
+        System.out.println(courseRepository.getByNameOrderByIdDesc("Python"));
+        System.out.println(courseRepository.getByNameOrderByNameDesc("Python"));
+        return this.courseService.getByName(courseName);
     }
 
     // adding new course

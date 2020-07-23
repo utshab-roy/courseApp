@@ -86,4 +86,14 @@ public class CourseServiceImpl implements CourseService {
         return courseRepository.getCourseName();
     }
 
+    /**
+     * JPA query manipulation followed by convention
+     * @param name
+     * @return List of courses
+     */
+    @Override
+    public List<Course> getByName(String name) {
+        return courseRepository.getByName(name);
+    }
+
 }
