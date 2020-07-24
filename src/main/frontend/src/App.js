@@ -1,10 +1,13 @@
 import React from 'react';
+import { Container } from 'reactstrap';
 import './App.css';
 
 function App() {
     return (
-        <div className="App">
-            <p>Hello, frontend app !</p>
+        <div>
+            <Container>
+                <h1>Hello, app !</h1>
+            </Container>
         </div>
     );
 }
