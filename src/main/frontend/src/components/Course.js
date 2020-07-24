@@ -8,15 +8,17 @@ import {
     Container,
 } from 'reactstrap';
 
-function Course() {
+function Course(props) {
+    //destructuring the property
+    const { course } = props;
     return (
         <div>
             <Card>
                 <CardBody className="text-center">
                     <CardTitle className="font-weight-bold">
-                        Java Course
+                        {course.title}
                     </CardTitle>
-                    <CardSubtitle>Description of the course</CardSubtitle>
+                    <CardSubtitle>{course.description}</CardSubtitle>
 
                     <Container className="mt-3">
                         <Button color="warning">Update</Button>{' '}
