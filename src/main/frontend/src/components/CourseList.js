@@ -1,12 +1,27 @@
-import React, { useState } from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import { CardColumns } from 'reactstrap';
 import Course from './Course';
 
 function CourseList() {
-    const [courses, setCourses] = useState([
-        { title: 'java', description: 'best course' },
-        { title: 'python', description: 'Hello world' },
-    ]);
+    const [courses, setCourses] = useState([]);
+
+    useEffect(() => {
+        axios
+            .get(`http://localhost:8080/courses`)
+            .then(res => {
+                // console.log(res.data);
+                const data = res.data;
+                setCourses(data);
+            })
+            .catch(error => {
+                console.log(error);
+            });
+
+        return () => {
+            // cleanup
+        };
+    }, []);
 
     /**
      * () => ({ name: 'Amanda' })  // Shorthand to return an object

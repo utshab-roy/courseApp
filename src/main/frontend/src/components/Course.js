@@ -16,7 +16,7 @@ function Course(props) {
             <Card>
                 <CardBody className="text-center">
                     <CardTitle className="font-weight-bold">
-                        {course.title}
+                        {course.name}
                     </CardTitle>
                     <CardSubtitle>{course.description}</CardSubtitle>
 

@@ -1,5 +1,6 @@
 import React from 'react';
-import { Button, Jumbotron } from 'reactstrap';
+import { NavLink } from 'react-router-dom';
+import { Jumbotron } from 'reactstrap';
 
 function Home() {
     return (
@@ -13,7 +14,12 @@ function Home() {
                 <hr className="my-2" />
                 <p>Please click the button to see it in action ! ! !</p>
                 <p className="lead">
-                    <Button color="primary">Welcome</Button>
+                    <NavLink
+                        to="/add-course"
+                        className="btn btn-outline-primary"
+                    >
+                        Let's Add a Course
+                    </NavLink>
                 </p>
             </Jumbotron>
         </div>

@@ -10,7 +10,7 @@ function NavBar() {
                     className="list-group-item list-group-item-action"
                     tag="a"
                     to="/"
-                    action
+                    action="true"
                 >
                     Home
                 </Link>
@@ -18,7 +18,7 @@ function NavBar() {
                     className="list-group-item list-group-item-action"
                     tag="a"
                     to="view-courses"
-                    action
+                    action="true"
                 >
                     View Course
                 </Link>
@@ -26,7 +26,7 @@ function NavBar() {
                     className="list-group-item list-group-item-action"
                     tag="a"
                     to="add-course"
-                    action
+                    action="true"
                 >
                     Add Course
                 </Link>
@@ -34,7 +34,7 @@ function NavBar() {
                     className="list-group-item list-group-item-action"
                     tag="a"
                     to="#"
-                    action
+                    action="true"
                 >
                     About
                 </Link>
@@ -42,7 +42,7 @@ function NavBar() {
                     className="list-group-item list-group-item-action"
                     tag="a"
                     to="#"
-                    action
+                    action="true"
                 >
                     Contact Us
                 </Link>
