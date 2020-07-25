@@ -1,10 +1,16 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import {
+    BrowserRouter as Router,
+    Redirect,
+    Route,
+    Switch,
+} from 'react-router-dom';
 import { Col, Container, Row } from 'reactstrap';
 import './App.css';
 import AddCourse from './components/AddCourse';
 import CourseList from './components/CourseList';
 import Footer from './components/Footer';
+import GenericNotFound from './components/GenericNotFound';
 import Header from './components/Header';
 import Home from './components/Home';
 import NavBar from './components/NavBar';
@@ -32,6 +38,8 @@ function App() {
                             <Route path="/" exact>
                                 <Home />
                             </Route>
+                            <Route path="/404" component={GenericNotFound} />
+                            <Redirect to="/404" />
                         </Switch>
                     </Col>
                 </Row>
