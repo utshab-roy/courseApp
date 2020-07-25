@@ -16,15 +16,16 @@ function CourseList() {
      * }
      */
 
+    // course list iteration
+    const courseList = courses.map((course, index) => (
+        <Course key={index} course={course} />
+    ));
+
     return (
         <div>
             <h1>List of courses</h1>
             <CardColumns>
-                {courses.length > 0
-                    ? courses.map((item, index) => (
-                          <Course key={index} course={item} />
-                      ))
-                    : 'No courses available'}
+                {courses.length > 0 ? courseList : 'No courses available'}
             </CardColumns>
         </div>
     );
