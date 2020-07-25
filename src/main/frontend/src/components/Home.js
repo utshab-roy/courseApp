@@ -5,7 +5,7 @@ function Home() {
     return (
         <div>
             <Jumbotron className="text-center">
-                <h1 className="display-3">Spring Boot + React Demo App</h1>
+                <h1 className="display-6">Spring Boot + React Demo App</h1>
                 <p className="lead">
                     Backend has been develop with Spring and the Frontend has
                     been develop with React
