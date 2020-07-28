@@ -5,11 +5,12 @@ import { Button, Form, FormGroup, Input, Label } from 'reactstrap';
 import base_url from './../api/bootapi';
 
 function AddCourse() {
-    const [course, setCourse] = useState({ name: '', description: '' });
+    const initialState = { name: '', description: '' };
+    const [course, setCourse] = useState(initialState);
 
     // form handler function
     const handleForm = event => {
-        console.log(course);
+        // passing course data to the postRequest function
         postRequest(course);
         event.preventDefault();
     };
@@ -18,12 +19,13 @@ function AddCourse() {
         axios
             .post(`${base_url}/courses`, data)
             .then(res => {
-                console.log(res);
+                // console.log(res);
                 toast.success('New course has been added !');
+                setCourse(initialState);
             })
             .catch(error => {
                 toast.error('Something went wrong !');
-                console.log(error);
+                // console.log(error);
             });
     };
 
@@ -34,6 +36,12 @@ function AddCourse() {
     const changeHandler = e => {
         // setting values in the course state
         setCourse({ ...course, [e.target.name]: e.target.value });
+    };
+
+    // action for the clear button
+    const clearAllFields = event => {
+        setCourse(initialState);
+        event.preventDefault();
     };
 
     return (
@@ -64,7 +72,9 @@ function AddCourse() {
                 <Button type="submit" color="success">
                     Submit
                 </Button>{' '}
-                <Button color="info">Clear</Button>
+                <Button type="button" color="info" onClick={clearAllFields}>
+                    Clear
+                </Button>
             </Form>
         </div>
     );
