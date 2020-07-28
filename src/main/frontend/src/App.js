@@ -5,6 +5,7 @@ import {
     Route,
     Switch,
 } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 import { Col, Container, Row } from 'reactstrap';
 import './App.css';
 import AddCourse from './components/AddCourse';
@@ -44,6 +45,7 @@ function App() {
                     </Col>
                 </Row>
                 <Footer />
+                <ToastContainer />
             </Container>
         </Router>
     );

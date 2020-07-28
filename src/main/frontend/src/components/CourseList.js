@@ -1,6 +1,8 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
 import { CardColumns } from 'reactstrap';
+import base_url from './../api/bootapi';
 import Course from './Course';
 
 function CourseList() {
@@ -8,11 +10,12 @@ function CourseList() {
 
     useEffect(() => {
         axios
-            .get(`http://localhost:8080/courses`)
+            .get(`${base_url}/courses`)
             .then(res => {
                 // console.log(res.data);
                 const data = res.data;
                 setCourses(data);
+                toast.success('Courses has been loaded !');
             })
             .catch(error => {
                 console.log(error);
