@@ -27,6 +27,20 @@ function CourseList() {
     }, []);
 
     /**
+     * an example of filter function:
+     * const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+     * const result = words.filter(word => word.length > 6);
+     * console.log(result);
+     * // expected output: Array ["exuberant", "destruction", "present"]
+     */
+
+    // by using filter function we are removing the deleted course form the list
+    const updateCourseList = id => {
+        const updatedCourseList = courses.filter(course => course.id !== id);
+        setCourses(updatedCourseList);
+    };
+
+    /**
      * () => ({ name: 'Amanda' })  // Shorthand to return an object
      *
      * () => {
@@ -36,7 +50,7 @@ function CourseList() {
 
     // course list iteration
     const courseList = courses.map((course, index) => (
-        <Course key={index} course={course} />
+        <Course key={index} course={course} updateCourse={updateCourseList} />
     ));
 
     return (

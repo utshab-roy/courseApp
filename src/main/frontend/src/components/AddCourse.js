@@ -19,7 +19,7 @@ function AddCourse() {
         axios
             .post(`${base_url}/courses`, data)
             .then(res => {
-                // console.log(res);
+                console.log(res);
                 toast.success('New course has been added !');
                 setCourse(initialState);
             })
