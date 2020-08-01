@@ -31,18 +31,22 @@ function App() {
                         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
                         <Switch>
-                            <Route path="/view-courses" exact>
-                                <CourseList />
-                            </Route>
-                            <Route path="/add-course" exact>
-                                <AddCourse />
-                            </Route>
-                            <Route path="/update-course/:id" exact>
-                                <UpdateCourse />
-                            </Route>
-                            <Route path="/" exact>
+                            <Route exact path="/">
                                 <Home />
                             </Route>
+
+                            <Route exact path="/view-courses">
+                                <CourseList />
+                            </Route>
+
+                            <Route exact path="/add-course">
+                                <AddCourse />
+                            </Route>
+
+                            <Route exact path="/update-course/:id">
+                                <UpdateCourse />
+                            </Route>
+
                             <Route path="/404" component={GenericNotFound} />
                             <Redirect to="/404" />
                         </Switch>

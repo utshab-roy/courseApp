@@ -3,52 +3,31 @@ import { Link } from 'react-router-dom';
 import { ListGroup } from 'reactstrap';
 
 function NavBar() {
-    /**
-     * TODO: Need to fix navbar issues
-     */
-
     return (
         <div>
             <ListGroup>
-                <Link
-                    className="list-group-item list-group-item-action"
-                    // tag="a"
-                    to="/"
-                    // action="true"
-                >
+                <Link className="list-group-item list-group-item-action" to="/">
                     Home
                 </Link>
+
                 <Link
                     className="list-group-item list-group-item-action"
-                    // tag="a"
-                    to="view-courses"
-                    // action="true"
+                    to="/view-courses"
                 >
-                    View Course
+                    View Courses
                 </Link>
+
                 <Link
                     className="list-group-item list-group-item-action"
-                    // tag="a"
-                    to="add-course"
-                    // action="true"
+                    to="/add-course"
                 >
-                    Add Course
+                    Add course
                 </Link>
-                <Link
-                    className="list-group-item list-group-item-action"
-                    // tag="a"
-                    to="#"
-                    // action="true"
-                >
+                <Link className="list-group-item list-group-item-action" to="#">
                     About
                 </Link>
-                <Link
-                    className="list-group-item list-group-item-action"
-                    // tag="a"
-                    to="#"
-                    // action="true"
-                >
-                    Contact Us
+                <Link className="list-group-item list-group-item-action" to="#">
+                    Contact
                 </Link>
             </ListGroup>
         </div>
