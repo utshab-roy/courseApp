@@ -15,6 +15,7 @@ import GenericNotFound from './components/GenericNotFound';
 import Header from './components/Header';
 import Home from './components/Home';
 import NavBar from './components/NavBar';
+import UpdateCourse from './components/UpdateCourse';
 
 function App() {
     return (
@@ -35,6 +36,9 @@ function App() {
                             </Route>
                             <Route path="/add-course" exact>
                                 <AddCourse />
+                            </Route>
+                            <Route path="/update-course/:id" exact>
+                                <UpdateCourse />
                             </Route>
                             <Route path="/" exact>
                                 <Home />

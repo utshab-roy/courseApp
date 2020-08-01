@@ -50,6 +50,7 @@ function CourseList() {
 
     // course list iteration
     const courseList = courses.map((course, index) => (
+        // return JSX using shorthand return statement
         <Course key={index} course={course} updateCourse={updateCourseList} />
     ));
 
